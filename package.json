@@ -1,0 +1,72 @@
+{
+  "name": "nest-typescript-eslint-starter",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Nest TypeScript starter repository using eslint configuration",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "del-cli 'dist'",
+    "build": "nest build",
+    "clean": "del-cli 'dist' 'node_modules' 'package-lock.json' 'yarn.lock' 'yarn-error.log'",
+    "format": "prettier \"**/*.{ts,js,json,md,yml}\" --ignore-path .gitignore --write",
+    "lint": "eslint \"{src,test}/**/*.ts\" --fix",
+    "sort-package-json": "npx sort-package-json@1.30.0",
+    "start": "nest start",
+    "start:debug": "nest start --debug --watch",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main",
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testEnvironment": "node",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.10.14",
+    "@nestjs/core": "^6.10.14",
+    "@nestjs/platform-express": "^6.10.14",
+    "del-cli": "^3.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^6.14.0",
+    "@nestjs/schematics": "^6.8.2",
+    "@nestjs/testing": "^6.10.14",
+    "@types/express": "^4.17.2",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.7",
+    "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.3.0",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.4"
+  }
+}
